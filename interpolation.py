@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import timeit
 from collections import deque
  
 def calcCoefficinet(x_array,y_array):
@@ -21,14 +20,9 @@ def plot(coefs):
     plt.show()
     print(f(10,coefs))
 
-def main():
-    x = [0, 0.5, 1, 1.5, 2, 2.5, 3]
-    y = [0, 2, 4, 6, 8, 10, 12]
-    
-    ####CREATE matrix (rough script)
+def createMatrix(x):
     matrix = np.array([])
     matrix.resize((len(x),len(x)))
-    
     help = []
     list = deque()
     for element in x:
@@ -37,12 +31,7 @@ def main():
         list.append(help)
         help=[]
     result = np.array(list)
-    coefs = calcCoefficinet(result,y)
-    plot(coefs)
-    
+    return result
     ###END
 
     
-#Execute main    
-if __name__== "__main__":
-    main()
