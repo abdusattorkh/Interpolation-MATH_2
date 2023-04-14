@@ -7,11 +7,18 @@ def sub(x,y):
     coefs = calcCoefficinet(mat,y)
 
 
-def main():
-    x = [0, 0.5, 1, 1.5, 2, 2.5, 3]
-    y = [0, 2, 4, 6, 8, 10, 12]
-    print(timeit.timeit(lambda:sub(x,y),number=1000000))
+def test():
+    size=100
+    x= np.empty(size,dtype=int)
+    for i in range(0,size):
+        x[i]=i
 
+    y = np.empty(size,dtype=int)
+    for i,ele in enumerate(x):
+        y[i]=pow(ele,2)
+    time=timeit.timeit(lambda:sub(x,y),number=10)
+    print(time)
+    print(y)
 
 if __name__=="__main__":
-    main()
+    test()
