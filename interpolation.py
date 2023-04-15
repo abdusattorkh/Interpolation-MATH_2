@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from collections import deque
  
 def calcCoefficinet(x_array,y_array):
@@ -12,14 +11,6 @@ def f(x,coefs):
         result+=pow(x,i)*coefs[coefs.size-1-i]
     return result
 
-def plot(coefs):
-    x=np.linspace(-10,10,100)
-    y=f(x,coefs)
-
-    plt.plot(x,y)
-    plt.show()
-    print(f(10,coefs))
-
 def createMatrix(x):
     matrix = np.array([])
     matrix.resize((len(x),len(x)))
@@ -31,6 +22,7 @@ def createMatrix(x):
         list.append(help)
         help=[]
     result = np.array(list)
+    print(result)
     return result
     ###END
 
