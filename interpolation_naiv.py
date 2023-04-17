@@ -13,7 +13,7 @@ def f(x,coefs):
 
 def createMatrix(x):
     matrix = np.array([])
-    matrix.resize((len(x),len(x)))
+    matrix.resize((len(x),len(x)),refcheck=False)
     help = []
     list = deque()
     for element in x:
@@ -22,7 +22,6 @@ def createMatrix(x):
         list.append(help)
         help=[]
     result = np.array(list)
-    print(result)
     return result
     ###END
 
