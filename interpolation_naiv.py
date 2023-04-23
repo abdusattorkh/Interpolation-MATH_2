@@ -3,6 +3,7 @@ from collections import deque
  
 def calcCoefficinet(x_array,y_array):
     coefs = np.linalg.solve(x_array, y_array)
+    print(coefs)
     return coefs
 
 def f(x,coefs):
